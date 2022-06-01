@@ -39,12 +39,10 @@ public class TestSuit extends BaseTest {
     @Test
     public void userShouldBeAbleToVote() {
         //click on Good Radio vote Button
-        // Clickonelements(By.xpath("//input[@id='pollanswers-2']"));
-       // homePage.clickOnGoodRadioButton();
+        homePage.clickOnGoodRadioButton();
 
         //click on vote button
-        //Clickonelements(By.xpath("//button[@id='vote-poll-1']"));
-       // homePage.clickOnVoteButton();
+        homePage.clickOnVoteButton();
 
         //verify only registered user can vote
         //driver.findElement(By.xpath("//body/div[6]/div[3]/div[1]"));
@@ -182,11 +180,9 @@ public class TestSuit extends BaseTest {
         //to verify the product is in the basket
         buildYourOwnComputerPage.verifyProductIsInTheBasket();
 
-       // assertEquals("The product has been added to your shopping cart",By.xpath("//a[contains(text(),'shopping cart')]"),"shopping cart locator not found");
-      //  assertEquals("Build your own computer",By.xpath("//a[@class='product-name']"),"Empty basket");
         String expectedMessage="The product has been added to your shopping cart";
-         String actualMessage=driver.findElement(By.xpath("//p[@class='content']")).getText();
-        Assert.assertEquals(actualMessage,expectedMessage,"The product has not been added to cart");
+        String actualMessage=driver.findElement(By.xpath("//p[@class='content']")).getText();
+      Assert.assertEquals(actualMessage,expectedMessage,"The product has not been added to cart");
 
 
 
