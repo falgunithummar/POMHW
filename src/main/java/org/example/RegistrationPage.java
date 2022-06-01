@@ -6,34 +6,54 @@ import org.testng.Assert;
 
 public class RegistrationPage extends Utils{
 
+    //locator for select Gender
+    private By _selectGender = By.xpath("//input[@id='gender-female']");
 
-  // private By_firstNameField = By.Xpath("//input[@id='FirstName']");
+    //locator for enter first name
+    private By _enterFirstName = By.xpath("//input[@id='FirstName']");
+
+    //locator for enter last name
+    private By _enterLastName = By.id("LastName");
+
+    //locator for enter email address
+    private By _enterEmailAddress = By.id("Email");
+
+    //locator for enter password
+    private By _enterPassword = By.id("Password");
+
+    //locator for confirm password
+    private By _confirmPassword = By.id("ConfirmPassword");
+
+    //locator for click on register button
+    private By _clickonregisterButton = By.id("register-button");
 
 
 
 
 
-    public void veryfyUserIsOnRegistrationPage(){
 
+//**********************************************************************************************************************
+
+    public void veryfyUserIsOnRegistrationPage()
+    {
     String actualRegistrationUrl=driver.getCurrentUrl();
     Assert.assertTrue(actualRegistrationUrl.contains("register"),"Your registration completed");
 
-
-        //verify user is on correct registration page
+    //verify user is on correct registration page
         driverWaitUntilContainersUrl(20, "https://demo.nopcommerce.com/register?returnUrl=%2F");
-
-
-
     }
+
 
     public void userEnterRegistrationDetails(){
 
         //select gender
-        Clickonelements(By.xpath("//input[@id='gender-female']"));
+        Clickonelements(_selectGender);
 
-        //Enter First and last name
-        texttype(By.xpath("//input[@id='FirstName']"), "Automation");
-        texttype(By.id("LastName"), "LastNameTest");
+        //Enter First name
+        texttype(_enterFirstName, "Automation");
+
+        //enter last name
+        texttype(_enterLastName, "LastNameTest");
 
         //enter birth Day month and year
         Select birthday = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']")));
@@ -45,23 +65,18 @@ public class RegistrationPage extends Utils{
         Select birthyear = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthYear']")));
         birthyear.selectByVisibleText("2015");
 
-        //enter email, password and confirm password
-        texttype(By.id("Email"),"fhhht1" + randomDate() + "@yahoo.com");
+        //enter email address
+        texttype(_enterEmailAddress,"fhhht1" + randomDate() + "@yahoo.com");
 
-        texttype(By.id("Password"), "ABC123");
+        //enter password
+        texttype(_enterPassword, "ABC123");
 
-        texttype(By.id("ConfirmPassword"), "ABC123");
-
-
-
-
-
-
+        //confirm password
+        texttype(_confirmPassword, "ABC123");
 
     }
     public void clickOnRegisterButton(){
-        Clickonelements(By.id("register-button"));
-
+        Clickonelements(_clickonregisterButton);
     }
 
 }

@@ -10,8 +10,9 @@ public class ComputersPage extends Utils{
 
 
 //**********************************************************************************************************************
-    public void clickOnDesktop(){
 
+    public void clickOnDesktop()
+    {
         //click on desktop
         Clickonelements(_clickOnDesktop);
     }

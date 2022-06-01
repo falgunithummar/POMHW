@@ -8,7 +8,7 @@ import java.time.Duration;
 
 public class DriverManager extends Utils {
 
-    String browserName = "chrome";
+    String browserName = "edge";
 
 
     public void openBrowser() {

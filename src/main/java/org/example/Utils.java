@@ -24,18 +24,24 @@ public class Utils extends BasePage{
     {
         driver.findElement(by).click();
     }
+
     public static void texttype(By by,String text)
     {
         driver.findElement(by).sendKeys(text);
     }
+
     public static String Gettextfrom(By by)
+
     {
         return driver.findElement(by).getText();
     }
-    public static void driverWaitsUntilURL(int time,String url){
+
+    public static void driverWaitsUntilURL(int time,String url)
+    {
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
         wait.until(ExpectedConditions.elementToBeClickable(By.id(url)));
     }
+
     public static String randomDate()
     {
         Date date = new Date();
@@ -46,8 +52,6 @@ public class Utils extends BasePage{
      //   String expectedmessage="expectedMessage";
      //   String actualMessage=driver.findElement(by).getText();
     //    Assert.assertEquals(actualMessage,expectedMessage,"errormessage");}
-
-
 
     public static void sleep(int time){
         try {
