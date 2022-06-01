@@ -9,6 +9,7 @@ public class TestSuit extends BaseTest {
 
     //objects made to bring property from different classes
     HomePage homePage = new HomePage();
+    
     RegistrationPage registrationPage = new RegistrationPage();
     RegistrationSuccessfulPage registrationSuccessfulPage = new RegistrationSuccessfulPage();
     ComputersPage computersPage = new ComputersPage();
