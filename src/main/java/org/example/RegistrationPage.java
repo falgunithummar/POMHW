@@ -2,10 +2,10 @@ package org.example;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.support.ui.Select;
-import org.testng.Assert;
 
 public class RegistrationPage extends Utils{
 
+     LoadProp loadProp = new LoadProp();
     //locator for select Gender
     private By _selectGender = By.xpath("//input[@id='gender-female']");
 
@@ -34,13 +34,10 @@ public class RegistrationPage extends Utils{
 
 //**********************************************************************************************************************
 
-    public void veryfyUserIsOnRegistrationPage()
+    public void verifyUserIsOnRegistrationPage()
     {
-    String actualRegistrationUrl=driver.getCurrentUrl();
-    Assert.assertTrue(actualRegistrationUrl.contains("register"),"Your registration completed");
-
-    //verify user is on correct registration page
-        driverWaitUntilContainersUrl(20, "https://demo.nopcommerce.com/register?returnUrl=%2F");
+        //verify user is on correct registration page
+        driverWaitUntilContainersUrl(10, "https://demo.nopcommerce.com/register?returnUrl=%2F");
     }
 
 
@@ -50,10 +47,10 @@ public class RegistrationPage extends Utils{
         Clickonelements(_selectGender);
 
         //Enter First name
-        texttype(_enterFirstName, "Automation");
+        texttype(_enterFirstName,loadProp.getProperty("firstName"));
 
         //enter last name
-        texttype(_enterLastName, "LastNameTest");
+        texttype(_enterLastName,loadProp.getProperty("LastName"));
 
         //enter birth Day month and year
         Select birthday = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']")));

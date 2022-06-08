@@ -10,29 +10,26 @@ import org.testng.annotations.BeforeMethod;
 import java.io.File;
 import java.io.IOException;
 
-public class BaseTest extends Utils{
+public class BaseTest extends Utils {
 
     DriverManager driverManager = new DriverManager();
 
 
     @BeforeMethod
-    public void SetUp(){
-    driverManager.openBrowser();
+    public void SetUp() {
+        driverManager.openBrowser();
     }
 
 
     @AfterMethod
-    public void close(ITestResult result){
-        if(!result.isSuccess()){
+    public void close(ITestResult result) {
+        if (!result.isSuccess()) {
             takeSnapshot(result.getName());
 
         }
         driver.quit();
 
     }
-
-
-
 
 
 }
