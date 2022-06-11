@@ -26,6 +26,16 @@ public class Utils extends BasePage {
         driver.findElement(by).sendKeys(text);
     }
 
+    public static void selectByValue(By by,String value){
+        Select dropdown = new Select(driver.findElement(by));
+        dropdown.selectByValue(value);
+    }
+
+    public void selectTextByValue(By by,String value){
+        Select dropdown = new Select(driver.findElement(by));
+        dropdown.selectByVisibleText(value);
+    }
+
     public static String Gettextfrom(By by) {
         return driver.findElement(by).getText();
     }
@@ -34,7 +44,6 @@ public class Utils extends BasePage {
   //      Select select = new Select(driver.findElement(BY));
   //      select.selectByVisibleText(By.id());
   //  }
-
 
 
     public static void driverWaitsUntilURL(int time, String url) {

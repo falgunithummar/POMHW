@@ -27,6 +27,9 @@ public class RegistrationPage extends Utils{
     //locator for click on register button
     private By _clickonregisterButton = By.id("register-button");
 
+    private By _birthdate = By.xpath("//select[@name='DateOfBirthDay']");
+    private By _birthmonth = By.xpath("//select[@name='DateOfBirthMonth']");
+    private By _birthyear = By.xpath("//select[@name='DateOfBirthYear']");
 
 
 
@@ -52,18 +55,19 @@ public class RegistrationPage extends Utils{
         //enter last name
         texttype(_enterLastName,loadProp.getProperty("LastName"));
 
-        //enter birth Day month and year
-        Select birthday = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthDay']")));
-        birthday.selectByVisibleText("3");
+        //enter birthday
+        selectByValue(_birthdate,loadProp.getProperty("birthday"));
+      //  String birthday = loadProp.getProperty("")
 
-        Select birthmonth = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthMonth']")));
-        birthmonth.selectByVisibleText("January");
+        //enter birthMonth
+        selectByValue(_birthmonth,loadProp.getProperty("birthmonth"));
 
-        Select birthyear = new Select(driver.findElement(By.xpath("//select[@name='DateOfBirthYear']")));
-        birthyear.selectByVisibleText("2015");
+        //enter birthyear
+        selectByValue(_birthyear,loadProp.getProperty("birthyear"));
 
         //enter email address
-        texttype(_enterEmailAddress,"fhhht1" + randomDate() + "@yahoo.com");
+       texttype(_enterEmailAddress,"fhhht1" + randomDate() + "@yahoo.com");
+        String email = loadProp.getProperty("email1")+ randomDate() + loadProp.getProperty("email2");
 
         //enter password
         texttype(_enterPassword, "ABC123");

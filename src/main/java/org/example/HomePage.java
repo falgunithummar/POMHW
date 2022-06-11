@@ -98,7 +98,8 @@ public class HomePage extends Utils {
         // List<String>actualProductTitles = new ArreyList<>();
         for (WebElement e : productList) {
             System.out.println(e.getText());
-        }}
+        }
+    }
 
 
 
@@ -106,7 +107,7 @@ public class HomePage extends Utils {
     //verify user is on home page
     public void userIsOnHomePage()
     {
-        assertEquals("Welcome to our store",_userIsOnHomePage , "user is Not on Homepage");
+        assertEquals("Welcome to our store", _userIsOnHomePage , "user is Not on Homepage");
     }
 
     //assert verification for alert message
