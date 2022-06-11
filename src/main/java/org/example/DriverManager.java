@@ -19,6 +19,7 @@ public class DriverManager extends Utils {
     //boolean cloud =false;
     //cloud will choose browserstack if true
     boolean cloud = Boolean.parseBoolean(System.getProperty("cloud"));
+    
 
     // String browserName = "chrome";
     String browserName = System.getProperty("browser");
