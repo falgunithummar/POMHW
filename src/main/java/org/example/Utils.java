@@ -1,6 +1,5 @@
 package org.example;
 
-import jdk.internal.org.objectweb.asm.tree.analysis.Value;
 import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -13,7 +12,6 @@ import java.io.IOException;
 import java.text.SimpleDateFormat;
 import java.time.Duration;
 import java.util.Date;
-import java.util.List;
 
 public class Utils extends BasePage {
 
@@ -73,6 +71,7 @@ public class Utils extends BasePage {
   //      {
   //      System.out.println(e.getText());
   //  }
+
 
 
 
@@ -179,6 +178,12 @@ public class Utils extends BasePage {
     }
 
     //******************************************************************************************************************
+
+    //parameterised method for url
+    public static void verifyCurrentUrl(String url){
+        driver.getCurrentUrl().equals(url);
+    }
+
 
 
     public static void takeSnapshot(String a) {

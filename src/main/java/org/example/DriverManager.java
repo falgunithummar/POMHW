@@ -11,19 +11,19 @@ import java.net.URL;
 import java.time.Duration;
 
 public class DriverManager extends Utils {
+
     LoadProp loadPage = new LoadProp();
     public final String USERNAME = loadPage.getProperty("bsUsername");
     public final String AUTOMATE_KEY = loadPage.getProperty("bsAccessKey");
     public final String BrowserstackURL = "https://" + USERNAME + ":" + AUTOMATE_KEY + "@hub-cloud.browserstack.com/wd/hub";
     DesiredCapabilities caps = new DesiredCapabilities();
+
     //boolean cloud =false;
     //cloud will choose browserstack if true
     boolean cloud = Boolean.parseBoolean(System.getProperty("cloud"));
-    
 
-    // String browserName = "chrome";
-    String browserName = System.getProperty("browser");
-
+     String browserName = "chrome";
+   // String browserName = System.getProperty("browser");
 
     public void openBrowser() {
         //making decision cloud true or false
@@ -96,7 +96,7 @@ public class DriverManager extends Utils {
 
     public void closeBrowser() {
 
-        // driver.quit();
+         driver.quit();
     }
 
 

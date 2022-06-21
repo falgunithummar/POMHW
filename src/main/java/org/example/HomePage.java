@@ -5,7 +5,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class HomePage extends Utils {
@@ -44,10 +43,27 @@ public class HomePage extends Utils {
 
     //locator for click on search button
     private By _clickOnSearchButton = By.xpath(" //button[contains(text(),'Search')]");
+
+    //locator for click on electronics
+    private By _clickOnElectronics = By.xpath(" //body/div[6]/div[2]/ul[1]/li[2]/a[1]");
+
+    //locator for click on apparel
+    private By _clickOnApparel = By.xpath("//body/div[6]/div[2]/ul[1]/li[3]/a[1]");
+
+    //locator fot click on digital downlods
+    private By _clickOnDigitalDownloads = By.xpath("//body/div[6]/div[2]/ul[1]/li[4]/a[1]");
+
+    //locator for click on books
+    private By _clickOnBooks = By.xpath("//body/div[6]/div[2]/ul[1]/li[5]/a[1]");
+
+    //locator for click on jewelry
+    private By _clickOnJewelry = By.xpath("//body/div[6]/div[2]/ul[1]/li[6]/a[1]");
+
+    //locator for click on gift cards
+    private By _clickOnGiftCards = By.xpath("//body/div[6]/div[2]/ul[1]/li[7]/a[1]");
+
+
     //******************************************************************************************************************
-    // public void userIsOnHomePage(){
-    //   assertExpectedEqualsActual("welcome to our store",);
-    // }
 
 
     public void RegisterButtonOnHomepage() {
@@ -101,42 +117,92 @@ public class HomePage extends Utils {
         }
     }
 
-
-
-
     //verify user is on home page
-    public void userIsOnHomePage()
-    {
-        assertEquals("Welcome to our store", _userIsOnHomePage , "user is Not on Homepage");
+    public void userIsOnHomePage() {
+        assertEquals("Welcome to our store", _userIsOnHomePage, "user is Not on Homepage");
     }
 
     //assert verification for alert message
-    public void verificationForAlertTextAndAccept()
-    {
+    public void verificationForAlertTextAndAccept() {
         alertMethodForGetText();
     }
 
     //click on Facebook from nopCommerce page
-    public void FBnopCommerce()
-    {
+    public void FBnopCommerce() {
         Clickonelements(_FBnopCommerce);
     }
 
     //click on nopCommerce new release button from homepage
-    public void clickOnNewReleaseDetailsButton()
-    {
+    public void clickOnNewReleaseDetailsButton() {
         Clickonelements(_clickOnDetailsButton);
     }
+
     //search the product in search box
-    public void typeInSearchBox(String product)
-    {
-        texttype(_productSearch,product);
+    public void typeInSearchBox(String product) {
+        texttype(_productSearch, product);
     }
+
     //click on search button
-    public void clickOnSearchButton()
-    {
-     Clickonelements(_clickOnSearchButton);
+    public void clickOnSearchButton() {
+        Clickonelements(_clickOnSearchButton);
     }
+
+    // click on electronics method
+    public void clickOnElectronics() {
+        Clickonelements(_clickOnElectronics);
+    }
+
+    //click on apparel method
+    public void clickOnApparel() {
+        Clickonelements(_clickOnApparel);
+    }
+
+    //click on digital download method
+    public void clickOnDigitalDownloads() {
+        Clickonelements(_clickOnDigitalDownloads);
+    }
+
+    //click on books method
+    public void clickOnBooks() {
+        Clickonelements(_clickOnBooks);
+    }
+
+    //click on jewelry method
+    public void clickOnJewelry() {
+        Clickonelements(_clickOnJewelry);
+    }
+
+    //click on gift cards method
+    public void clickOnGiftCards() {
+        Clickonelements(_clickOnGiftCards);
+    }
+    //parameterised method for clicking on different links
+    public void clickOnCategoryLink(String category_name){
+        Clickonelements(By.linkText(category_name));
+    }
+
+//    public void clickOnCategoryLink(String category_name){
+//        Clickonelements(By.linkText("Computers,Electronics,Apparel,Digital downloads,Books,Jewelry,Gift Cards"));}
+//        category = new ArrayList<>();
+//        category.add("Computers");
+//        category.add("Electronics");
+//        category.add("Apparel");
+//        category.add("Digital downloads");
+//        category.add("Books");
+//        category.add("Jewelry");
+//        category.add("Gift Cards");
+//        clickOnHomePageLinks(category);
+
+        // driver.findElement(By.linkText("Computers,Electronics,Apparel,Digital downloads,Books,Jewelry,Gift Cards")).click();
+//    }
+//    public void urlVerification(String category_url){
+//        assertVerificationOfUrl("https://demo.nopcommerce.com/computers,https://demo.nopcommerce.com/electronics,
+//                https://demo.nopcommerce.com/apparel,
+//                https://demo.nopcommerce.com/digital-downloads,
+//                https://demo.nopcommerce.com/books,
+//                https://demo.nopcommerce.com/jewelry,
+//                https://demo.nopcommerce.com/gift-cards" "");
+
 
 
 }

@@ -28,8 +28,8 @@ public class NewReleasePage extends Utils {
 
 
     //assert verification method for url
-    public void assertVerificationOfUrl() {
-        assertVerificationOfUrl("https://demo.nopcommerce.com/nopcommerce-new-release", "url not matching");
+    public void assertVerificationOfUrl(String errorMessage) {
+        assertVerificationOfUrl("https://demo.nopcommerce.com/nopcommerce-new-release", "wrong url");
     }
 
     //assert verification for get text

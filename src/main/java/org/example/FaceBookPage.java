@@ -36,9 +36,9 @@ public class FaceBookPage extends Utils {
     }
 
     //Assert verification for user is on FB nop commerce page
-    public void assertVerificationOfUrl()
+    public void assertVerificationOfUrl(String errorMessage)
     {
-        assertVerificationOfUrl("https://www.facebook.com/nopCommerce", "url not matching");
+        assertVerificationOfUrl("https://www.facebook.com/nopCommerce","wrong url");
     }
 
 
