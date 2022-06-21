@@ -13,3 +13,5 @@ Scenario Outline: User should be able to navigate to desired category page succe
       | Books             | https://demo.nopcommerce.com/books             |
       | Jewelry           | https://demo.nopcommerce.com/jewelry           |
       | Gift Cards        | https://demo.nopcommerce.com/gift-cards        |
+
+    
